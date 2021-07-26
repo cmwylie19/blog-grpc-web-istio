@@ -1,0 +1,18 @@
+syntax = "proto3";
+package numbers;
+option go_package="/api";
+
+message NumberRequest {
+    string userAgent = 1;
+}
+
+message NumberResponse {
+    bool value = 1;
+    string ts = 2;
+    string userAgent = 3;
+    int64 count  = 4;
+}
+
+service Numbers{
+    rpc GetNumbers(NumberRequest) returns (stream NumberResponse) {};
+}

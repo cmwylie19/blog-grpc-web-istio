@@ -1,0 +1,1 @@
+docker build -t docker.io/cmwylie19/backend-grpc .; docker push docker.io/cmwylie19/backend-grpc
