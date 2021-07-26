@@ -12,6 +12,7 @@ Follow the order below to setup environment.
 - [Deploy the frontend](#deploy-the-frontend)
 - [Create Istio Config](#create-istio-config)
 - [Interact with the application](#interact-with-the-application)
+- [Clean up](#clean-up)
 
 ## Install Istio
 ```
@@ -40,7 +41,7 @@ cd $CURRENT_DIRECTORY
 ```
 Wait for the pod's **STATUS** condition to be **Running** 
 ```
-for x in $(seq 99); do kubectl get pods -n istio-sytem; sleep 3s; done
+for x in $(seq 99); do kubectl get pods -n istio-system; sleep 3s; done
 ```
 
 
@@ -284,4 +285,18 @@ grpcurl -plaintext $(k get svc -n istio-system istio-ingressgateway -ojsonpath="
 
 # Use endpoint
 grpcurl -plaintext -d '{"userAgent":"chrome"}'  $(k get svc -n istio-system istio-ingressgateway -ojsonpath="{.status.loadBalancer.ingress[0].ip}"):80 numbers.Numbers/GetNumbers
+```
+
+## Clean up
+```
+# Remove istio-injection label from default namespace
+kubectl label namespace istio-system istio-injection=disabled --overwrite
+
+# Clean Istio resources
+kubectl delete hpa,deploy,svc --all -n istio-system 
+kubectl delete ns istio-system
+kubectl delete gw,vs,dr --all
+
+# Remove Apps
+kubectl delete deploy,svc,sa frontend backend
 ```
