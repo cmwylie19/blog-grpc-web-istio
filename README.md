@@ -1,6 +1,8 @@
 # Setup POC Environment
 _This doc outlines how to setup the POC environment for consuming gRPC Server streaming through Istio via a React frontend using gRPC-Web._
 
+_[Link](https://docs.google.com/presentation/d/1KCw3wcBmyBKzK6TE01FDRPc9-1NEaKKd9Qfe4miY-NE/edit?usp=sharing) to slides._
+
 **Prereqs**
 _Create a cluster in Google Cloud Environment._
 ![GKE Cluster](/GKE.png)
