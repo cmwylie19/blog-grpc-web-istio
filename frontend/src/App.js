@@ -11,7 +11,6 @@ const client = new NumbersClient(window.location.protocol + "//" + gateway_url);
 
 const enableDevTools = window.__GRPCWEB_DEVTOOLS__ || (() => {});
 enableDevTools([client]);
-var i = 0;
 
 const useStyles = makeStyles((theme) => ({
   container: {

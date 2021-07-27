@@ -290,7 +290,7 @@ grpcurl -plaintext -d '{"userAgent":"chrome"}'  $(k get svc -n istio-system isti
 ## Clean up
 ```
 # Remove istio-injection label from default namespace
-kubectl label namespace istio-system istio-injection=disabled --overwrite
+kubectl label namespace default istio-injection-
 
 # Clean Istio resources
 kubectl delete hpa,deploy,svc --all -n istio-system 

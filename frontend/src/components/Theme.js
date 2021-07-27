@@ -5,14 +5,14 @@ import {
   responsiveFontSizes,
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { lightGreen, grey } from "@material-ui/core/colors";
+import { lightGreen, grey,red } from "@material-ui/core/colors";
 
 export const darkTheme = createMuiTheme({
   typography: {
     fontFamily: "Red Hat Text, sans-serif",
   },
   palette: {
-    primary: { main: "#000", contrastText: "#fbfbfb" },
+    primary: { main: grey[900], contrastText: "#fbfbfb" },
     secondary: { main: lightGreen[500] },
     type: "light",
   },
@@ -54,7 +54,7 @@ export const lightTheme = createMuiTheme({
     fontFamily: "Red Hat Text, sans-serif",
   },
   palette: {
-    primary: { main: grey[700], contrastText: "#fbfbfb" },
+    primary: { main: red[700], contrastText: "#fbfbfb" },
     secondary: { main: lightGreen[500] },
     type: "light",
   },

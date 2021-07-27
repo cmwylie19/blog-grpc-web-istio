@@ -49,6 +49,10 @@ spec:
     - uri:
         exact: /ui
     - uri:
+        exact: /favicon.ico
+    - uri:
+        exact: /manifest.json
+    - uri:
         prefix: /static
     - uri:
         prefix: /sockjs-node
